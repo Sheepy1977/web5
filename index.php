@@ -13,6 +13,14 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<?php
 	session_start();
+	$username=$_COOKIE['web5'];
+	if ($username) 
+	{
+		$row=getsql("select * from members where name='$username'",-1);
+		$_SESSION['uid']=$row['uid'];
+		$_SESSION['name']=$row['name'];
+		$_SESSION['adminLevel']=$row['adminLevel'];
+	}
 	if (!$_SESSION['uid']) echo '<link type="text/css" href="css/style.css" rel="stylesheet" />';
 	error_reporting("E_WARING");
 	include_once('dbconn.php');
