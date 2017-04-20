@@ -13,6 +13,8 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<?php
 	session_start();
+	include_once('dbconn.php');
+	include("lib.php");
 	$username=$_COOKIE['web5'];
 	if ($username) 
 	{
